@@ -1,0 +1,131 @@
+/***********************************************************************
+ * Module:  Persona.cpp
+ * Author:  MATEO
+ * Modified: viernes, 16 de junio de 2023 8:39:57
+ * Purpose: Implementation of the class Persona
+ ***********************************************************************/
+
+#include "Registro.h"
+#include "NodoDoble.h"
+#include "ListaCircularDoble.h"
+#include "Persona.h"
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::getCedula()
+// Purpose:    Implementation of Persona::getCedula()
+// Return:     char*
+////////////////////////////////////////////////////////////////////////
+
+char* Persona::getCedula(void)
+{
+   return cedula;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::setCedula(char* newCedula)
+// Purpose:    Implementation of Persona::setCedula()
+// Parameters:
+// - newCedula
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Persona::setCedula(char* newCedula)
+{
+   cedula = newCedula;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::getNombre()
+// Purpose:    Implementation of Persona::getNombre()
+// Return:     char*
+////////////////////////////////////////////////////////////////////////
+
+char* Persona::getNombre(void)
+{
+   return nombre;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::setNombre(char* newNombre)
+// Purpose:    Implementation of Persona::setNombre()
+// Parameters:
+// - newNombre
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Persona::setNombre(char* newNombre)
+{
+   nombre = newNombre;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::getApellido()
+// Purpose:    Implementation of Persona::getApellido()
+// Return:     char*
+////////////////////////////////////////////////////////////////////////
+
+char* Persona::getApellido(void)
+{
+   return apellido;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::setApellido(char* newApellido)
+// Purpose:    Implementation of Persona::setApellido()
+// Parameters:
+// - newApellido
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Persona::setApellido(char* newApellido)
+{
+   apellido = newApellido;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::getFecha()
+// Purpose:    Implementation of Persona::getFecha()
+// Return:     Fecha
+////////////////////////////////////////////////////////////////////////
+
+Fecha Persona::getFecha(void)
+{
+   return fecha;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::setFecha(Fecha newFecha)
+// Purpose:    Implementation of Persona::setFecha()
+// Parameters:
+// - newFecha
+// Return:     void
+////////////////////////////////////////////////////////////////////////
+
+void Persona::setFecha(Fecha newFecha)
+{
+   fecha = newFecha;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::Persona()
+// Purpose:    Implementation of Persona::Persona()
+// Return:     
+////////////////////////////////////////////////////////////////////////
+
+Persona::Persona()
+{
+   registro = NULL;
+   nodoDoble = NULL;
+   listaCircularDoble = NULL;
+}
+
+////////////////////////////////////////////////////////////////////////
+// Name:       Persona::~Persona()
+// Purpose:    Implementation of Persona::~Persona()
+// Return:     
+////////////////////////////////////////////////////////////////////////
+
+Persona::~Persona()
+{
+   // TODO : implement
+}
