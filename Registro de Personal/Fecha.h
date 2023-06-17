@@ -1,12 +1,12 @@
 /***********************************************************************
  * Module:  Fecha.h
- * Author:  MATEO
- * Modified: viernes, 16 de junio de 2023 8:39:57
+ * Author:  ronny
+ * Modified: sábado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class Fecha
  ***********************************************************************/
 
-#if !defined(__Registro_Personal_Fecha_h)
-#define __Registro_Personal_Fecha_h
+#if !defined(__Registro_Personal2_Fecha_h)
+#define __Registro_Personal2_Fecha_h
 
 class Persona;
 class Registro;

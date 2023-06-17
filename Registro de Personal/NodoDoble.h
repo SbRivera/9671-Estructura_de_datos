@@ -1,12 +1,12 @@
 /***********************************************************************
  * Module:  NodoDoble.h
- * Author:  MATEO
- * Modified: viernes, 16 de junio de 2023 9:10:31
+ * Author:  ronny
+ * Modified: sábado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class NodoDoble
  ***********************************************************************/
 
-#if !defined(__Registro_Personal_NodoDoble_h)
-#define __Registro_Personal_NodoDoble_h
+#if !defined(__Registro_Personal2_NodoDoble_h)
+#define __Registro_Personal2_NodoDoble_h
 
 class ListaCircularDoble;
 

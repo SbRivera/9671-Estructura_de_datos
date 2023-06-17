@@ -1,12 +1,12 @@
 /***********************************************************************
  * Module:  Registro.h
- * Author:  MATEO
- * Modified: viernes, 16 de junio de 2023 8:39:57
+ * Author:  ronny
+ * Modified: sábado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class Registro
  ***********************************************************************/
 
-#if !defined(__Registro_Personal_Registro_h)
-#define __Registro_Personal_Registro_h
+#if !defined(__Registro_Personal2_Registro_h)
+#define __Registro_Personal2_Registro_h
 
 #include <Fecha.h>
 

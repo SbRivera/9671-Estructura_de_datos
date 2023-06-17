@@ -1,12 +1,12 @@
 /***********************************************************************
  * Module:  Persona.h
- * Author:  MATEO
- * Modified: viernes, 16 de junio de 2023 8:39:57
+ * Author:  ronny
+ * Modified: sábado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class Persona
  ***********************************************************************/
 
-#if !defined(__Registro_Personal_Persona_h)
-#define __Registro_Personal_Persona_h
+#if !defined(__Registro_Personal2_Persona_h)
+#define __Registro_Personal2_Persona_h
 
 class Registro;
 class NodoDoble;

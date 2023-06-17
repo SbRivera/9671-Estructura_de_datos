@@ -1,12 +1,12 @@
 /***********************************************************************
  * Module:  ListaCircularDoble.h
- * Author:  MATEO
- * Modified: viernes, 16 de junio de 2023 9:10:31
+ * Author:  ronny
+ * Modified: sábado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class ListaCircularDoble
  ***********************************************************************/
 
-#if !defined(__Registro_Personal_ListaCircularDoble_h)
-#define __Registro_Personal_ListaCircularDoble_h
+#if !defined(__Registro_Personal2_ListaCircularDoble_h)
+#define __Registro_Personal2_ListaCircularDoble_h
 
 #include <NodoDoble.h>
 #include <Persona.h>
