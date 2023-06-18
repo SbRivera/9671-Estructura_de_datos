@@ -29,11 +29,11 @@ void mostrarMenu(int opcionActual) {
         switch (i) {
             case 1:
                 std::cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << std::endl;
-                //gestor.insertarDatos();
+                gestor.insertarDatos();
                 break;
             case 2:
                 std::cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
-                //gestor.buscarRegistroPersona();
+                gestor.buscarRegistroPersona();
                 break;
             case 3:
                 std::cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
