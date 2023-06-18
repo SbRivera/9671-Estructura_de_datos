@@ -1,6 +1,6 @@
 #include <iostream>
 #include <conio.h>
-
+#include "Gestor.h"
 // Definir c\242digos de escape ANSI para colores de texto
 #define ANSI_COLOR_CYAN     "\x1b[94m"
 #define ANSI_COLOR_RESET    "\x1b[0m"
@@ -17,6 +17,7 @@ void regresarMenu() {
 }
 
 void mostrarMenu(int opcionActual) {
+    Gestor gestor;
     std::cout << "\t\t\t=== MENU ===" << std::endl;
     for (int i = 1; i <= 5; i++) {
         if (i == opcionActual) {
@@ -28,9 +29,11 @@ void mostrarMenu(int opcionActual) {
         switch (i) {
             case 1:
                 std::cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << std::endl;
+                //gestor.insertarDatos();
                 break;
             case 2:
                 std::cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
+                //gestor.buscarRegistroPersona();
                 break;
             case 3:
                 std::cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
@@ -67,9 +70,11 @@ int moverMenu() {
                 switch (opcionActual) {
                     case 1:
                         std::cout << "\t === Registrar Nuevo Empleado ===" << std::endl;
+
                         break;
                     case 2:
                         std::cout << "\t === Buscar Registro de Empleado ===" << std::endl;
+
                         break;
                     case 3:
                         std::cout << "\t === Editar Registro de Empleado ===" << std::endl;
@@ -88,6 +93,7 @@ int moverMenu() {
     }
     return 0;
 }
+
 
 
 

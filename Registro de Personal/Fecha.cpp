@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  Fecha.cpp
  * Author:  ronny
- * Modified: sábado, 17 de junio de 2023 9:28:05
+ * Modified: sï¿½bado, 17 de junio de 2023 9:28:05
  * Purpose: Implementation of the class Fecha
  ***********************************************************************/
 
@@ -89,8 +89,8 @@ void Fecha::setAnio(int newAnio)
 
 Fecha::Fecha()
 {
-   persona = NULL;
-   registro = NULL;
+   persona = nullptr;
+   registro = nullptr;
 }
 
 ////////////////////////////////////////////////////////////////////////
