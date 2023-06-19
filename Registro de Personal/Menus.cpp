@@ -87,6 +87,7 @@ int operarMenu() {
                         break;
                     case 5:
                         cout << "\t === Imprimir Todos los Registros ===" << endl;
+                        gestor.imprimirDatos();
                         break;
                     case 6:
                         cout << "Saliendo del programa..." << endl;

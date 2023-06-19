@@ -68,4 +68,19 @@ void Gestor::insertarDatos(){
     cin >> fecha;
     guardarDatos();
 }
+void Gestor::imprimirDatos() {
+    std::ifstream archivo("datos.txt");  
+
+    if (!archivo) {
+        std::cout << "No se pudo abrir el archivo" << std::endl;
+        return;
+    }
+
+    std::string linea;
+    while (std::getline(archivo, linea)) {
+        std::cout << linea << std::endl;
+    }
+
+    archivo.close();
+}
 
