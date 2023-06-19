@@ -1,3 +1,10 @@
+/**
+ * @file gestor.cpp
+ * @version 1.0.4
+ * @date 18/06/2023
+ * @author Karla Ansatuña, Alexis Chimba, Matias Suarez
+ * @brief Funciones base y uso de librerias estandar y para manipulacion del archivo txt
+ */
 #include "Gestor.h"
 #include <iostream>
 #include <fstream>
