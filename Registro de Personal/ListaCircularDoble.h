@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  ListaCircularDoble.h
  * Author:  ronny
- * Modified: sábado, 17 de junio de 2023 9:28:05
+ * Modified: sï¿½bado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class ListaCircularDoble
  ***********************************************************************/
 
@@ -17,7 +17,7 @@ public:
    ListaCircularDoble();
    ~ListaCircularDoble();
    void insertar(Persona persona1);
-   void eliminar(Persona persona1);
+   void eliminar(const char*);
    void mostrar(void);
    bool buscar(void);
 

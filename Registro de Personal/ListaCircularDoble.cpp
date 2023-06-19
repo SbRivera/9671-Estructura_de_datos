@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  ListaCircularDoble.cpp
  * Author:  ronny
- * Modified: s�bado, 17 de junio de 2023 9:28:05
+ * Modified: s�bado, 17 de junio de 2023 9:28:05
  * Purpose: Implementation of the class ListaCircularDoble
  ***********************************************************************/
 
@@ -49,9 +49,47 @@ void ListaCircularDoble::insertar(Persona persona1)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void ListaCircularDoble::eliminar(Persona persona1)
-{
-   // TODO : implement
+void eliminar(const char* valor) {
+
+    if (cabeza == nullptr) {
+        std::cout << "La lista está vacía." << std::endl;
+        return;
+    }
+
+    NodoDoble* actual = cabeza;
+    NodoDoble* anterior = nullptr;
+    bool encontrado = false;
+
+    do {
+        if (strcmp(actual->getPersona().getCedula(), valor) == 0) {
+            encontrado = true;
+            break;
+        }
+
+        anterior = actual;
+        actual = actual->getSiguiente();
+    } while (actual != cabeza);
+
+    if (!encontrado) {
+        std::cout << "El valor " << valor << " no se encontró en la lista." << std::endl;
+        return;
+    }
+
+    if (actual == cabeza && actual->getSiguiente() == cabeza) {
+        cabeza = nullptr;
+    }
+    else if (actual == cabeza) {
+        cabeza = actual->getSiguiente();
+        actual->getAnterior()->setSiguiente(cabeza);
+        cabeza->setAnterior(actual->getAnterior());
+    }
+    else {
+        actual->getAnterior()->setSiguiente(actual->getSiguiente());
+        actual->getSiguiente()->setAnterior(actual->getAnterior());
+    }
+
+    delete actual;
+    std::cout << "Se eliminó el valor " << valor << " de la lista." << std::endl;
 }
 
 ////////////////////////////////////////////////////////////////////////
