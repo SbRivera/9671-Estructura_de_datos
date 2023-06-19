@@ -1,0 +1,4 @@
+Cedula: g
+Nombre: g
+Apellido: g
+Fecha: g

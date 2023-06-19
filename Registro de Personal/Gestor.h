@@ -11,6 +11,9 @@ public:
     void buscarRegistroPersona();
     void getInformacion();
     void insertarDatos();
+    void buscarDatos();
+    void actualizarDatos();
+    void eliminarDatos();
 private:
     std::string cedula;
     std::string nombre;

@@ -1,69 +1,71 @@
-#include "gestor.h"
+#include "Gestor.h"
 #include <iostream>
 #include <fstream>
 
+using namespace std;
 void Gestor::cargarDatos() {
-    std::ifstream archivo;
-    archivo.open("datos.txt", std::ios::in);
+    ifstream archivo;
+    archivo.open("datos.txt", ios::in);
     if (!archivo) {
-        std::cout << "No se pudo abrir el archivo" << std::endl;
+        cout << "No se pudo abrir el archivo" << endl;
         return;
     }
-    std::string linea;
+    string linea;
     while (getline(archivo, linea)) {
-        std::cout << linea << std::endl;
+        cout << linea << endl;
     }
     archivo.close();
 }
 
 void Gestor::guardarDatos() {
-    std::ofstream archivo;
-    archivo.open("datos.txt", std::ios::out);
+    ofstream archivo;
+    archivo.open("datos.txt", ios::out);
     if (!archivo) {
-        std::cout << "No se pudo abrir el archivo" << std::endl;
+        cout << "No se pudo abrir el archivo" << endl;
         return;
     }
-    archivo << "Cedula: " << cedula << std::endl;
-    archivo << "Nombre: " << nombre << std::endl;
-    archivo << "Apellido: " << apellido << std::endl;
-    archivo << "Fecha: " << fecha << std::endl;
+    archivo << "Cedula: " << cedula << endl;
+    archivo << "Nombre: " << nombre << endl;
+    archivo << "Apellido: " << apellido << endl;
+    archivo << "Fecha: " << fecha << endl;
     archivo.close();
 }
 //crea una funcion que busuqe los datos segun la cedula
-void Gestor::buscarDatosConCedula(std::string cedula) {
-    std::ifstream archivo;
-    archivo.open("datos.txt", std::ios::in);
+void Gestor::buscarDatosConCedula(string cedula) {
+    ifstream archivo;
+    archivo.open("datos.txt", ios::in);
     if (!archivo) {
-        std::cout << "No se pudo abrir el archivo" << std::endl;
+        cout << "No se pudo abrir el archivo" << endl;
         return;
     }
-    std::string linea;
+    string linea;
     while (getline(archivo, linea)) {
-        std::cout << linea << std::endl;
+        cout << linea << endl;
     }
     archivo.close();
 }
 void Gestor::buscarRegistroPersona(){
-    std::string resultado;
-    std::cout << "Ingrese la cedula de la persona que desea buscar: ";
-    std::cin >> resultado;
+    string resultado;
+    cout << "Ingrese la cedula de la persona que desea buscar: ";
+    cin >> resultado;
     buscarDatosConCedula(resultado);
     this->getInformacion();
 }
 void Gestor::getInformacion(){
-    std::cout << "Cedula: " << cedula << std::endl;
-    std::cout << "Nombre: " << nombre << std::endl;
-    std::cout << "Apellido: " << apellido << std::endl;
-    std::cout << "Fecha: " << fecha << std::endl;
+    cout << "Cedula: " << cedula << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Apellido: " << apellido << endl;
+    cout << "Fecha: " << fecha << endl;
 }
 void Gestor::insertarDatos(){
-    std::cout << "Ingrese la cedula: ";
-    std::cin >> cedula;
-    std::cout << "Ingrese el nombre: ";
-    std::cin >> nombre;
-    std::cout << "Ingrese el apellido: ";
-    std::cin >> apellido;
-    std::cout << "Ingrese la fecha: ";
-    std::cin >> fecha;
+    cout << "Ingrese la cedula: ";
+    cin >> cedula;
+    cout << "Ingrese el nombre: ";
+    cin >> nombre;
+    cout << "Ingrese el apellido: ";
+    cin >> apellido;
+    cout << "Ingrese la fecha: ";
+    cin >> fecha;
     guardarDatos();
 }
+

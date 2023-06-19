@@ -21,7 +21,7 @@ void regresarMenu() {
 void mostrarMenu(int opcionActual) {
     Gestor gestor;
     cout << "\t\t\t=== MENU ===" << endl;
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 6; i++) {
         if (i == opcionActual) {
             cout << "\t> " << ANSI_COLOR_CYAN ;
         }
@@ -42,6 +42,9 @@ void mostrarMenu(int opcionActual) {
                 cout << "Eliminar Registro de Empleado" << ANSI_COLOR_RESET << endl;
                 break;
             case 5:
+                cout << "Imprimir Todos los Registros" << ANSI_COLOR_RESET << endl;
+                break;
+            case 6:
                 cout << "Salir" << ANSI_COLOR_RESET << endl;
                 break;
         }
@@ -60,10 +63,10 @@ int operarMenu() {
 
         switch (tecla) {
             case 72:
-                opcionActual = (opcionActual > 1) ? opcionActual - 1 : 5;
+                opcionActual = (opcionActual > 1) ? opcionActual - 1 : 6;
                 break;
             case 80:
-                opcionActual = (opcionActual < 5) ? opcionActual + 1 : 1;
+                opcionActual = (opcionActual < 6) ? opcionActual + 1 : 1;
                 break;
             case 13:
                 system("cls");
@@ -83,6 +86,9 @@ int operarMenu() {
                         cout << "\t === Eliminar Registro de Empleado ===" << endl;
                         break;
                     case 5:
+                        cout << "\t === Imprimir Todos los Registros ===" << endl;
+                        break;
+                    case 6:
                         cout << "Saliendo del programa..." << endl;
                         return 0;
                 }
