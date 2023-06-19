@@ -29,11 +29,9 @@ void mostrarMenu(int opcionActual) {
         switch (i) {
             case 1:
                 std::cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << std::endl;
-                gestor.insertarDatos();
                 break;
             case 2:
                 std::cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
-                gestor.buscarRegistroPersona();
                 break;
             case 3:
                 std::cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
@@ -48,9 +46,9 @@ void mostrarMenu(int opcionActual) {
     }
 }
 
-int moverMenu() {
+int operarMenu() {
     int opcionActual = 1;
-
+	Gestor gestor;
     while (true) {
         system("cls");
 
@@ -70,11 +68,11 @@ int moverMenu() {
                 switch (opcionActual) {
                     case 1:
                         std::cout << "\t === Registrar Nuevo Empleado ===" << std::endl;
-
+						gestor.insertarDatos();
                         break;
                     case 2:
                         std::cout << "\t === Buscar Registro de Empleado ===" << std::endl;
-
+						gestor.buscarRegistroPersona();
                         break;
                     case 3:
                         std::cout << "\t === Editar Registro de Empleado ===" << std::endl;
