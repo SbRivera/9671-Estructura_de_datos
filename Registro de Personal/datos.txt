@@ -1,4 +1,3 @@
-Cedula: g
-Nombre: g
-Apellido: g
-Fecha: g
+Nombre: David
+Apellido: Toapanta
+Fecha: 12/03/200

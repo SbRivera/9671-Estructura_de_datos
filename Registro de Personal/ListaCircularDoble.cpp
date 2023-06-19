@@ -1,115 +1,144 @@
-/***********************************************************************
- * Module:  ListaCircularDoble.cpp
- * Author:  ronny
- * Modified: s�bado, 17 de junio de 2023 9:28:05
- * Purpose: Implementation of the class ListaCircularDoble
- ***********************************************************************/
-
 #include "ListaCircularDoble.h"
-
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::ListaCircularDoble()
-// Purpose:    Implementation of ListaCircularDoble::ListaCircularDoble()
-// Return:     
-////////////////////////////////////////////////////////////////////////
+#include <iostream>
+using namespace std;
 
 ListaCircularDoble::ListaCircularDoble()
 {
+	this->cabeza = nullptr;
+	this->cola = nullptr;
 }
-
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::~ListaCircularDoble()
-// Purpose:    Implementation of ListaCircularDoble::~ListaCircularDoble()
-// Return:     
-////////////////////////////////////////////////////////////////////////
 
 ListaCircularDoble::~ListaCircularDoble()
 {
-   // TODO : implement
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::insertar(Persona persona1)
-// Purpose:    Implementation of ListaCircularDoble::insertar()
-// Parameters:
-// - persona1
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void ListaCircularDoble::insertar(Persona persona1)
+void ListaCircularDoble::insertar(Persona dato)
 {
-   // TODO : implement
+	NodoDoble* nuevo = new NodoDoble(dato);
+	if (this->cabeza == nullptr)
+	{
+		this->cabeza = nuevo;
+		this->cola = nuevo;
+		this->cabeza->setSiguiente(this->cola);
+		this->cabeza->setAnterior(this->cola);
+		this->cola->setSiguiente(this->cabeza);
+		this->cola->setAnterior(this->cabeza);
+	}
+	else
+	{
+		this->cola->setSiguiente(nuevo);
+		nuevo->setAnterior(this->cola);
+		nuevo->setSiguiente(this->cabeza);
+		this->cabeza->setAnterior(nuevo);
+		this->cola = nuevo;
+	}
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::eliminar(Persona persona1)
-// Purpose:    Implementation of ListaCircularDoble::eliminar()
-// Parameters:
-// - persona1
-// Return:     void
-////////////////////////////////////////////////////////////////////////
+//void ListaCircularDoble::eliminar(string cedula)
+//{
+//	if (this->cabeza != nullptr)
+//	{
+//		Persona p1=this->cabeza->getDato();
+//		if (p1.getCedula() == cedula)
+//		{
+//			NodoDoble* aux = this->cabeza;
+//			this->cabeza = this->cabeza->getSiguiente();
+//			this->cabeza->setAnterior(this->cola);
+//			this->cola->setSiguiente(this->cabeza);
+//			delete aux;
+//		}
+//		else
+//		{
+//			NodoDoble* aux = this->cabeza;
+//			p1=aux->getDato();
+//			while (aux->getSiguiente() != this->cabeza)
+//			{
+//				if (aux->getSiguiente()->getDato() == dato)
+//				{
+//					NodoDoble* aux2 = aux->getSiguiente();
+//					aux->setSiguiente(aux2->getSiguiente());
+//					aux2->getSiguiente()->setAnterior(aux);
+//					delete aux2;
+//					break;
+//				}
+//				aux = aux->getSiguiente();
+//			}
+//		}
+//	}
+//}
 
-void eliminar(const char* valor) {
 
-    if (cabeza == nullptr) {
-        std::cout << "La lista está vacía." << std::endl;
+void ListaCircularDoble::mostrar()
+{
+	if (this->cabeza != nullptr)
+	{
+		NodoDoble* aux = this->cabeza;
+		do
+		{
+			Persona p1= aux->getDato();
+				cout << "Cedula: " << p1.getCedula() << endl;
+				cout << "Nombre: " << p1.getNombre() << endl;
+				cout << "Apellido: " << p1.getApellido() << endl;
+				// Imprimir otros atributos de Persona si los hubiera
+			aux = aux->getSiguiente();
+		} while (aux != this->cabeza);
+		cout << endl;
+	}
+}
+
+
+void ListaCircularDoble::buscarCedula(string cedula)
+{
+	if (this->cabeza != nullptr)
+	{
+		NodoDoble* aux = this->cabeza;
+		Persona p1= aux->getDato();
+		do
+		{
+			if (p1.getCedula() == cedula)
+			{
+				Persona p1=aux->getDato();
+				cout<<"Se encontro a la Persona "<<endl;
+				cout<<"Nombre: "<<p1.getNombre()<<endl;
+				cout<<"Apellido: "<<p1.getApellido()<<endl;
+				cout<<"Cedula: "<<p1.getCedula()<<endl;
+			}
+			aux = aux->getSiguiente();
+			p1 = aux->getDato();
+		} while (aux != this->cabeza);
+		//cout<<"No se encontro a la persona"<<endl;
+	}else{
+		cout<<"No se encontro a la persona"<<endl;
+	}
+	
+}
+void ListaCircularDoble::ordenarPorIntercambio(){	
+    if (cabeza == nullptr || cabeza->getSiguiente() == nullptr)
         return;
-    }
 
+    bool intercambioRealizado = false;
     NodoDoble* actual = cabeza;
-    NodoDoble* anterior = nullptr;
-    bool encontrado = false;
-
-    do {
-        if (strcmp(actual->getPersona().getCedula(), valor) == 0) {
-            encontrado = true;
-            break;
+    Persona p1=actual->getDato();
+    NodoDoble* siguiente = actual->getSiguiente();
+	Persona p2=siguiente->getDato();
+    while (siguiente != nullptr) {
+        if (p1.getNombre() > p2.getNombre()) {
+            Persona aux = actual->getDato();
+            actual->setDato(siguiente->getDato());
+            siguiente->setDato(aux);
+            intercambioRealizado = true;
         }
-
-        anterior = actual;
-        actual = actual->getSiguiente();
-    } while (actual != cabeza);
-
-    if (!encontrado) {
-        std::cout << "El valor " << valor << " no se encontró en la lista." << std::endl;
-        return;
+        actual = siguiente;
+        p1=actual->getDato();
+		siguiente = siguiente->getSiguiente();
+		p2=siguiente->getDato();
     }
 
-    if (actual == cabeza && actual->getSiguiente() == cabeza) {
-        cabeza = nullptr;
-    }
-    else if (actual == cabeza) {
-        cabeza = actual->getSiguiente();
-        actual->getAnterior()->setSiguiente(cabeza);
-        cabeza->setAnterior(actual->getAnterior());
-    }
-    else {
-        actual->getAnterior()->setSiguiente(actual->getSiguiente());
-        actual->getSiguiente()->setAnterior(actual->getAnterior());
-    }
-
-    delete actual;
-    std::cout << "Se eliminó el valor " << valor << " de la lista." << std::endl;
+    if (intercambioRealizado)
+        ordenarPorIntercambio();
 }
 
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::mostrar()
-// Purpose:    Implementation of ListaCircularDoble::mostrar()
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void ListaCircularDoble::mostrar(void)
-{
-   // TODO : implement
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       ListaCircularDoble::buscar()
-// Purpose:    Implementation of ListaCircularDoble::buscar()
-// Return:     bool
-////////////////////////////////////////////////////////////////////////
-
-bool ListaCircularDoble::buscar(void)
-{
-   // TODO : implement
-}
+//
+//
+//
+//

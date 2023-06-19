@@ -1,45 +1,33 @@
 /***********************************************************************
  * Module:  Persona.h
  * Author:  ronny
- * Modified: s·bado, 17 de junio de 2023 9:28:05
+ * Modified: s√°bado, 17 de junio de 2023 9:28:05
  * Purpose: Declaration of the class Persona
  ***********************************************************************/
+#pragma once
 
-#if !defined(__Registro_Personal2_Persona_h)
-#define __Registro_Personal2_Persona_h
-
-class Registro;
-class NodoDoble;
-class ListaCircularDoble;
-
-#include <Fecha.h>
-
+using namespace std;
 class Persona
 {
 public:
-   char* getCedula(void);
-   void setCedula(char* newCedula);
-   char* getNombre(void);
-   void setNombre(char* newNombre);
-   char* getApellido(void);
-   void setApellido(char* newApellido);
-   Fecha getFecha(void);
-   void setFecha(Fecha newFecha);
+   string getCedula(void);
+   void setCedula(string newCedula);
+   string getNombre(void);
+   void setNombre(string newNombre);
+   string getApellido(void);
+   void setApellido(string newApellido);
+//   Fecha getFecha(void);
+  // void setFecha(Fecha newFecha);
    Persona();
    ~Persona();
 
-   Registro** registro;
-   NodoDoble** nodoDoble;
-   ListaCircularDoble** listaCircularDoble;
 
 protected:
 private:
-   char* cedula;
-   char* nombre;
-   char* apellido;
-   Fecha fecha;
+   string cedula;
+   string nombre;
+   string apellido;
+//   Fecha fecha;
 
 
 };
-
-#endif

@@ -1,10 +1,3 @@
-/**
- * @file gestor.cpp
- * @version 1.0.4
- * @date 18/06/2023
- * @author Karla Ansatuña, Alexis Chimba, Matias Suarez
- * @brief Funciones base y uso de librerias estandar y para manipulacion del archivo txt
- */
 #include "Gestor.h"
 #include <iostream>
 #include <fstream>
@@ -75,19 +68,48 @@ void Gestor::insertarDatos(){
     cin >> fecha;
     guardarDatos();
 }
-void Gestor::imprimirDatos() {
-    std::ifstream archivo("datos.txt");  
+void Gestor::eliminarDatos() {
+    string cedula;
+    cout << "Ingrese la cedula de la persona que desea eliminar: ";
+    cin >> cedula;
 
-    if (!archivo) {
-        std::cout << "No se pudo abrir el archivo" << std::endl;
+
+    ifstream archivo("datos.txt");
+    ofstream archivoTemporal("temp.txt");
+
+    if (!archivo || !archivoTemporal) {
+        cout << "No se pudo abrir el archivo" << endl;
         return;
     }
 
-    std::string linea;
-    while (std::getline(archivo, linea)) {
-        std::cout << linea << std::endl;
+    string linea;
+    bool encontrado = false;
+
+
+    while (getline(archivo, linea)) {
+
+        if (linea.find("Cedula: " + cedula) != string::npos) {
+            encontrado = true;
+
+            continue;
+        }
+
+        archivoTemporal << linea << endl;
     }
 
     archivo.close();
+    archivoTemporal.close();
+
+
+    remove("datos.txt");
+
+    rename("temp.txt", "datos.txt");
+
+    if (encontrado) {
+        cout << "Datos eliminados correctamente." << endl;
+    } else {
+        cout << "No se encontraron datos con esa cedula." << endl;
+    }
 }
+
 

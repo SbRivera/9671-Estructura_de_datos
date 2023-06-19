@@ -14,7 +14,6 @@ public:
     void buscarDatos();
     void actualizarDatos();
     void eliminarDatos();
-    void imprimirDatos();
 private:
     std::string cedula;
     std::string nombre;

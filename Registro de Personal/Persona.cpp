@@ -1,13 +1,13 @@
 /***********************************************************************
  * Module:  Persona.cpp
  * Author:  ronny
- * Modified: s·bado, 17 de junio de 2023 9:28:05
+ * Modified: s√°bado, 17 de junio de 2023 9:28:05
  * Purpose: Implementation of the class Persona
  ***********************************************************************/
 
-#include "Registro.h"
-#include "NodoDoble.h"
-#include "ListaCircularDoble.h"
+//#include "Registro.h"
+//#include "NodoDoble.cpp"
+//#include "ListaCircularDoble.cpp"
 #include "Persona.h"
 
 ////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@
 // Return:     char*
 ////////////////////////////////////////////////////////////////////////
 
-char* Persona::getCedula(void)
+string Persona::getCedula(void)
 {
    return cedula;
 }
@@ -29,7 +29,7 @@ char* Persona::getCedula(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Persona::setCedula(char* newCedula)
+void Persona::setCedula(string newCedula)
 {
    cedula = newCedula;
 }
@@ -40,7 +40,7 @@ void Persona::setCedula(char* newCedula)
 // Return:     char*
 ////////////////////////////////////////////////////////////////////////
 
-char* Persona::getNombre(void)
+string Persona::getNombre(void)
 {
    return nombre;
 }
@@ -53,7 +53,7 @@ char* Persona::getNombre(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Persona::setNombre(char* newNombre)
+void Persona::setNombre(string newNombre)
 {
    nombre = newNombre;
 }
@@ -64,7 +64,7 @@ void Persona::setNombre(char* newNombre)
 // Return:     char*
 ////////////////////////////////////////////////////////////////////////
 
-char* Persona::getApellido(void)
+string Persona::getApellido(void)
 {
    return apellido;
 }
@@ -77,7 +77,7 @@ char* Persona::getApellido(void)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Persona::setApellido(char* newApellido)
+void Persona::setApellido(string newApellido)
 {
    apellido = newApellido;
 }
@@ -88,23 +88,23 @@ void Persona::setApellido(char* newApellido)
 // Return:     Fecha
 ////////////////////////////////////////////////////////////////////////
 
-Fecha Persona::getFecha(void)
-{
-   return fecha;
-}
-
-////////////////////////////////////////////////////////////////////////
-// Name:       Persona::setFecha(Fecha newFecha)
-// Purpose:    Implementation of Persona::setFecha()
-// Parameters:
-// - newFecha
-// Return:     void
-////////////////////////////////////////////////////////////////////////
-
-void Persona::setFecha(Fecha newFecha)
-{
-   fecha = newFecha;
-}
+//Fecha Persona::getFecha(void)
+//{
+//   return fecha;
+//}
+//
+//////////////////////////////////////////////////////////////////////////
+//// Name:       Persona::setFecha(Fecha newFecha)
+//// Purpose:    Implementation of Persona::setFecha()
+//// Parameters:
+//// - newFecha
+//// Return:     void
+//////////////////////////////////////////////////////////////////////////
+//
+//void Persona::setFecha(Fecha newFecha)
+//{
+//   fecha = newFecha;
+//}
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Persona::Persona()
@@ -114,9 +114,6 @@ void Persona::setFecha(Fecha newFecha)
 
 Persona::Persona()
 {
-   registro = NULL;
-   nodoDoble = NULL;
-   listaCircularDoble = NULL;
 }
 
 ////////////////////////////////////////////////////////////////////////

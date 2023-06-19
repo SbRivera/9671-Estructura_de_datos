@@ -1,32 +1,19 @@
-/***********************************************************************
- * Module:  ListaCircularDoble.h
- * Author:  ronny
- * Modified: s�bado, 17 de junio de 2023 9:28:05
- * Purpose: Declaration of the class ListaCircularDoble
- ***********************************************************************/
-
-#if !defined(__Registro_Personal2_ListaCircularDoble_h)
-#define __Registro_Personal2_ListaCircularDoble_h
-
-#include <NodoDoble.h>
-#include <Persona.h>
-
+#pragma once
+#include "NodoDoble.cpp"
+//#include "Persona.cpp"
 class ListaCircularDoble
 {
-public:
-   ListaCircularDoble();
-   ~ListaCircularDoble();
-   void insertar(Persona persona1);
-   void eliminar(const char*);
-   void mostrar(void);
-   bool buscar(void);
-
-protected:
 private:
-   NodoDoble* cabeza;
-   NodoDoble* cola;
-
-
+	NodoDoble* cabeza;
+	NodoDoble* cola;
+public:
+	ListaCircularDoble();
+	~ListaCircularDoble();
+	void insertar(Persona);
+	void eliminarCedula(string cedula);
+	void mostrar();
+	void buscarCedula(string cedula);
+	void ordenarPorIntercambio();
 };
 
-#endif
+

@@ -6,8 +6,8 @@
 
 using namespace std;
 int main() {
-//crearCarpetaYArchivo();
-operarMenu ();
-
+crearCarpetaYArchivo();
+Menus menu;
+menu.operarMenu();
 }
 
