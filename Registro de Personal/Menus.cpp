@@ -1,10 +1,12 @@
 #include <iostream>
 #include <conio.h>
 #include "Gestor.h"
+
 // Definir c\242digos de escape ANSI para colores de texto
 #define ANSI_COLOR_CYAN     "\x1b[94m"
 #define ANSI_COLOR_RESET    "\x1b[0m"
 
+using namespace std;
 void regresarMenu() {
     while (true) {
         if (_kbhit()) {
@@ -18,29 +20,29 @@ void regresarMenu() {
 
 void mostrarMenu(int opcionActual) {
     Gestor gestor;
-    std::cout << "\t\t\t=== MENU ===" << std::endl;
+    cout << "\t\t\t=== MENU ===" << endl;
     for (int i = 1; i <= 5; i++) {
         if (i == opcionActual) {
-            std::cout << "\t> " << ANSI_COLOR_CYAN ;
+            cout << "\t> " << ANSI_COLOR_CYAN ;
         }
         else {
-            std::cout << "  ";
+            cout << "  ";
         }
         switch (i) {
             case 1:
-                std::cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << std::endl;
+                cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << endl;
                 break;
             case 2:
-                std::cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
+                cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << endl;
                 break;
             case 3:
-                std::cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
+                cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << endl;
                 break;
             case 4:
-                std::cout << "Eliminar Registro de Empleado" << ANSI_COLOR_RESET << std::endl;
+                cout << "Eliminar Registro de Empleado" << ANSI_COLOR_RESET << endl;
                 break;
             case 5:
-                std::cout << "Salir" << ANSI_COLOR_RESET << std::endl;
+                cout << "Salir" << ANSI_COLOR_RESET << endl;
                 break;
         }
     }
@@ -67,21 +69,21 @@ int operarMenu() {
                 system("cls");
                 switch (opcionActual) {
                     case 1:
-                        std::cout << "\t === Registrar Nuevo Empleado ===" << std::endl;
+                        cout << "\t === Registrar Nuevo Empleado ===" << endl;
 						gestor.insertarDatos();
                         break;
                     case 2:
-                        std::cout << "\t === Buscar Registro de Empleado ===" << std::endl;
+                        cout << "\t === Buscar Registro de Empleado ===" << endl;
 						gestor.buscarRegistroPersona();
                         break;
                     case 3:
-                        std::cout << "\t === Editar Registro de Empleado ===" << std::endl;
+                        cout << "\t === Editar Registro de Empleado ===" << endl;
                         break;
                     case 4:
-                        std::cout << "\t === Eliminar Registro de Empleado ===" << std::endl;
+                        cout << "\t === Eliminar Registro de Empleado ===" << endl;
                         break;
                     case 5:
-                        std::cout << "Saliendo del programa..." << std::endl;
+                        cout << "Saliendo del programa..." << endl;
                         return 0;
                 }
                 _getch();
