@@ -16,6 +16,7 @@ public:
     void regresarMenu();
     void mostrarMenu(int opcionActual);
     void menuBusqueda();
+    void menuEliminacion();
     int operarMenu();
     Persona ingresoPersona();
     char* pedirCedula(void);
@@ -151,6 +152,12 @@ void Menus::menuBusqueda(){
 	string cedula;
 	cedula=pedirCedula();
 	lista.buscarCedula(cedula);
+}
+
+void Menus::menuEliminacion() {
+    string cedula;
+    cedula = pedirCedula();
+    lista.eliminarCedula(cedula);
 }
 
 char* Menus::pedirCedula(void){

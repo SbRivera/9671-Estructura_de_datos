@@ -37,38 +37,59 @@ void ListaCircularDoble::insertar(Persona dato)
 	}
 }
 
-//void ListaCircularDoble::eliminar(string cedula)
-//{
-//	if (this->cabeza != nullptr)
-//	{
-//		Persona p1=this->cabeza->getDato();
-//		if (p1.getCedula() == cedula)
-//		{
-//			NodoDoble* aux = this->cabeza;
-//			this->cabeza = this->cabeza->getSiguiente();
-//			this->cabeza->setAnterior(this->cola);
-//			this->cola->setSiguiente(this->cabeza);
-//			delete aux;
-//		}
-//		else
-//		{
-//			NodoDoble* aux = this->cabeza;
-//			p1=aux->getDato();
-//			while (aux->getSiguiente() != this->cabeza)
-//			{
-//				if (aux->getSiguiente()->getDato() == dato)
-//				{
-//					NodoDoble* aux2 = aux->getSiguiente();
-//					aux->setSiguiente(aux2->getSiguiente());
-//					aux2->getSiguiente()->setAnterior(aux);
-//					delete aux2;
-//					break;
-//				}
-//				aux = aux->getSiguiente();
-//			}
-//		}
-//	}
-//}
+void ListaCircularDoble::eliminarCedula(string cedula)
+{
+	if (this->cabeza != nullptr)
+	{
+		Persona p1=this->cabeza->getDato();
+		if (p1.getCedula() == cedula && cabeza == cola)
+		{
+			NodoDoble* aux = this->cabeza;
+			this->cabeza = nullptr;
+			this->cola = nullptr;
+			delete aux;
+			cout << "\nSe elimino a la persona " << endl;
+			return;
+
+		}
+		else if (p1.getCedula() == cedula)
+		{
+			NodoDoble* aux = this->cabeza;
+			this->cabeza = this->cabeza->getSiguiente();
+			this->cabeza->setAnterior(this->cola);
+			this->cola->setSiguiente(this->cabeza);
+			delete aux;
+			cout << "\nSe elimino a la persona " << endl;
+			return;
+		}
+
+		else
+		{
+			NodoDoble* aux = this->cabeza;
+			p1=aux->getDato();
+			while (aux->getSiguiente() != this->cabeza)
+			{
+				if (aux->getSiguiente()->getDato().getCedula() == cedula)
+				{
+					NodoDoble* aux2 = aux->getSiguiente();
+					if (aux2 == cola) {
+						cola = aux;
+					}
+					aux->setSiguiente(aux2->getSiguiente());
+					aux2->getSiguiente()->setAnterior(aux);
+					delete aux2;
+					cout << "\nSe elimino a la persona " << endl;
+
+					return;
+				}
+				aux = aux->getSiguiente();
+			}
+		}
+		
+
+	}
+	cout << "\nNo se encontro a la persona " << endl;
+}
 
 
 void ListaCircularDoble::mostrar()
