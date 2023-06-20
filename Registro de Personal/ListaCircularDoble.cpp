@@ -113,33 +113,3 @@ void ListaCircularDoble::buscarCedula(string cedula)
 	}
 	
 }
-void ListaCircularDoble::ordenarPorIntercambio(){	
-    if (cabeza == nullptr || cabeza->getSiguiente() == nullptr)
-        return;
-
-    bool intercambioRealizado = false;
-    NodoDoble* actual = cabeza;
-    Persona p1=actual->getDato();
-    NodoDoble* siguiente = actual->getSiguiente();
-	Persona p2=siguiente->getDato();
-    while (siguiente != nullptr) {
-        if (p1.getNombre() > p2.getNombre()) {
-            Persona aux = actual->getDato();
-            actual->setDato(siguiente->getDato());
-            siguiente->setDato(aux);
-            intercambioRealizado = true;
-        }
-        actual = siguiente;
-        p1=actual->getDato();
-		siguiente = siguiente->getSiguiente();
-		p2=siguiente->getDato();
-    }
-
-    if (intercambioRealizado)
-        ordenarPorIntercambio();
-}
-
-//
-//
-//
-//

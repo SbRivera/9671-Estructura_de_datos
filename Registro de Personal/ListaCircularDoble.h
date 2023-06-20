@@ -14,7 +14,6 @@ public:
 	void eliminarCedula(string cedula);
 	void mostrar();
 	void buscarCedula(string cedula);
-	void ordenarPorIntercambio();
 };
 
 

@@ -1,12 +1,5 @@
-/***********************************************************************
- * Module:  Ingreso.cpp
- * Author:  David Toapanta, Mateo Llumigusin, Carlos Torres
- * Modified: domingo, 04 de junio de 2023 21:45:32
- * Purpose: Registro Personal
- ***********************************************************************/
-
-#if !defined(__RolDePagos_Validaciones_h)
-#define __RolDePagos_Validaciones_h
+#if !defined(Validaciones_h)
+#define Validaciones_h
 
 #include <string>
 using namespace std;
@@ -32,7 +25,6 @@ public:
 
 protected:
 private:
-
 
 };
 
