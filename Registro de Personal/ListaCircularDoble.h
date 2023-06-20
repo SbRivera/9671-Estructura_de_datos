@@ -11,7 +11,7 @@ public:
 	ListaCircularDoble();
 	~ListaCircularDoble();
 	void insertar(Persona);
-	void eliminarCedula(string cedula);
+	void eliminarCedula(string);
 	void mostrar();
 	void buscarCedula(string cedula);
 };
