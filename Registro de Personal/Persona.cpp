@@ -10,19 +10,16 @@ string Persona::getCedula(void)
 }
 
 
-
 void Persona::setCedula(string newCedula)
 {
    cedula = newCedula;
 }
 
 
-
 string Persona::getNombre(void)
 {
    return nombre;
 }
-
 
 
 void Persona::setNombre(string newNombre)

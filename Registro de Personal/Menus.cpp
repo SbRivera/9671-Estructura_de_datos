@@ -45,16 +45,16 @@ void Menus::mostrarMenu(int opcionActual) {
         }
         switch (i) {
             case 1:
-                cout << "Registrar Nuevo Empleado" << ANSI_COLOR_RESET << endl;
+                cout << "Registrar Nuevo Persona" << ANSI_COLOR_RESET << endl;
                 break;
             case 2:
-                cout << "Buscar Registro de Empleado" << ANSI_COLOR_RESET << endl;
+                cout << "Buscar Registro de Persona" << ANSI_COLOR_RESET << endl;
                 break;
 //            case 3:
-//                cout << "Editar Registro de Empleado" << ANSI_COLOR_RESET << endl;
+//                cout << "Editar Registro de Persona" << ANSI_COLOR_RESET << endl;
 //                break;
             case 3:
-                cout << "Eliminar Registro de Empleado" << ANSI_COLOR_RESET << endl;
+                cout << "Eliminar Registro de Persona" << ANSI_COLOR_RESET << endl;
                 break;
             case 4:
                 cout << "Imprimir Todos los Registros" << ANSI_COLOR_RESET << endl;
@@ -91,19 +91,19 @@ int Menus::operarMenu() {
                 system("cls");
                 switch (opcionActual) {
                     case 1:
-                        cout << "\t === Registrar Nuevo Empleado ===" << endl;
+                        cout << "\t === Registrar Nuevo Persona ===" << endl;
                         persona1 = ingresoPersona();
                         lista.insertar(persona1);
                         break;
                     case 2:
-                        cout << "\t === Buscar Registro de Empleado Por Cedula===" << endl;
+                        cout << "\t === Buscar Registro de Persona Por Cedula===" << endl;
                         menuBusqueda();
                         break;
 //                    case 3:
- //                       cout << "\t === Editar Registro de Empleado ===" << endl;
+ //                       cout << "\t === Editar Registro de Persona ===" << endl;
 //                        break;
                     case 3:
-                        cout << "\t === Eliminar Registro de Empleado ===" << endl;
+                        cout << "\t === Eliminar Registro de Persona ===" << endl;
                         break;
                     case 4:
                         cout << "\t === Imprimir Todos los Registros ===" << endl;
