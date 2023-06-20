@@ -1,6 +1,7 @@
 #include "ListaCircularDoble.cpp"
 #include <iostream>
 #include <conio.h>
+#include "Validaciones.cpp"
 
 // Definir códigos de escape ANSI para colores de texto
 #define ANSI_COLOR_CYAN     "\x1b[94m"
@@ -9,13 +10,14 @@
 class Menus {
 private:
     ListaCircularDoble lista;
-
+	Validaciones v1;
 public:
     void regresarMenu();
     void mostrarMenu(int opcionActual);
     void menuBusqueda();
     int operarMenu();
     Persona ingresoPersona();
+    char* pedirCedula(void);
 };
 
 using namespace std;
@@ -65,7 +67,6 @@ void Menus::mostrarMenu(int opcionActual) {
 
 int Menus::operarMenu() {
     int opcionActual = 1;
-
     Persona persona1;
 
     while (true) {
@@ -99,7 +100,6 @@ int Menus::operarMenu() {
                         break;
                     case 4:
                         cout << "\t === Eliminar Registro de Empleado ===" << endl;
-
                         break;
                     case 5:
                         cout << "\t === Imprimir Todos los Registros ===" << endl;
@@ -119,18 +119,18 @@ int Menus::operarMenu() {
 
 Persona Menus::ingresoPersona() {
     Persona persona1;
-    char cedula[50];
-    char nombre[50];
-    char apellido[50];
+    Validaciones v2;
+    string cedula;
+    string nombre;
+    string apellido;
 
-    cout << "Ingrese el Cedula:" << endl;
-    cin >> cedula;
+    cedula= pedirCedula();
 
-    cout << "Ingrese el nombre:" << endl;
-    cin >> nombre;
+    cout << "\n Ingrese el nombre:" << endl;
+    nombre=v2.validarStrings();
 
-    cout << "Ingrese el Apellido:" << endl;
-    cin >> apellido;
+    cout << "\n Ingrese el Apellido:" << endl;
+    apellido=v2.validarStrings();
 
     persona1.setCedula(cedula);
     persona1.setNombre(nombre);
@@ -141,7 +141,27 @@ Persona Menus::ingresoPersona() {
 
 void Menus::menuBusqueda(){
 	string cedula;
-	cout<<"Ingrese la cedula: "<<endl;
-	cin>>cedula;
+	cedula=pedirCedula();
 	lista.buscarCedula(cedula);
+}
+
+char* Menus::pedirCedula(void){
+	Validaciones validacion;
+	
+	char *cedula;
+	bool validar=false;
+	int longitud;
+	bool bandera=false;
+	do{
+		cout<<"\n*Cedula: ";
+		cedula=validacion.validarEnterosCedula();
+		bandera=validacion.verificacionCedula(cedula);
+		if(bandera==validar){
+			cout<<"\nIngrese una cedula valida"<<endl;
+		}
+	}while(bandera==validar);
+	
+	validacion.~Validaciones();
+	
+	return cedula;
 }
