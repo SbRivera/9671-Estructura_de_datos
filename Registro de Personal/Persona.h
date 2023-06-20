@@ -1,9 +1,3 @@
-/***********************************************************************
- * Module:  Persona.h
- * Author:  ronny
- * Modified: sábado, 17 de junio de 2023 9:28:05
- * Purpose: Declaration of the class Persona
- ***********************************************************************/
 #pragma once
 
 using namespace std;

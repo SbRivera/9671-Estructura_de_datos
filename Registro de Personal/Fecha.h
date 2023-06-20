@@ -1,10 +1,3 @@
-/***********************************************************************
- * Module:  Fecha.h
- * Author:  ronny
- * Modified: sábado, 17 de junio de 2023 9:28:05
- * Purpose: Declaration of the class Fecha
- ***********************************************************************/
-
 #if !defined(__Registro_Personal2_Fecha_h)
 #define __Registro_Personal2_Fecha_h
 
@@ -40,7 +33,6 @@ private:
    int hora;
    int minutos;
    int segundos;
-
 
 };
 
