@@ -1,5 +1,3 @@
-#include "Gestor.h"
-//#include "Persona.cpp"
 #include "ListaCircularDoble.cpp"
 #include <iostream>
 #include <conio.h>
@@ -67,8 +65,7 @@ void Menus::mostrarMenu(int opcionActual) {
 
 int Menus::operarMenu() {
     int opcionActual = 1;
-    //ListaCircularDoble lista;
-    Gestor gestor;
+
     Persona persona1;
 
     while (true) {
@@ -91,7 +88,6 @@ int Menus::operarMenu() {
                     case 1:
                         cout << "\t === Registrar Nuevo Empleado ===" << endl;
                         persona1 = ingresoPersona();
-                        //gestor.insertarDatos();
                         lista.insertar(persona1);
                         break;
                     case 2:
@@ -103,7 +99,7 @@ int Menus::operarMenu() {
                         break;
                     case 4:
                         cout << "\t === Eliminar Registro de Empleado ===" << endl;
-                        //gestor.eliminarDatos();
+
                         break;
                     case 5:
                         cout << "\t === Imprimir Todos los Registros ===" << endl;

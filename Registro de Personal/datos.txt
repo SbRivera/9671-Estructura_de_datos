@@ -1,3 +1,0 @@
-Nombre: David
-Apellido: Toapanta
-Fecha: 12/03/200
