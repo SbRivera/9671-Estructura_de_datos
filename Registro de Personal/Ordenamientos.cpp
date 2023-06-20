@@ -76,7 +76,6 @@ operarMenuOrdenamiento() {
                         break;
                     case 2:
                         cout << "\t === Ordenamiento _________ ===" << endl;
-                        
                         break;
                     case 3:
                         cout << "\t === Ordenamiento _________===" << endl;
