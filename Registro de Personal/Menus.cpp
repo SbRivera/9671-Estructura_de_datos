@@ -94,6 +94,7 @@ int Menus::operarMenu() {
                         cout << "\t === Registrar Nuevo Empleado ===" << endl;
                         persona1 = ingresoPersona();
                         lista.insertar(persona1);
+                        
                         break;
                     case 2:
                         cout << "\t === Buscar Registro de Empleado Por Cedula===" << endl;

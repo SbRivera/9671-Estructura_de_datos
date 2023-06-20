@@ -36,4 +36,3 @@ void crearCarpetaYArchivo()
 
     std::cout << "Carpeta y archivo creados exitosamente." << std::endl;
 }
-

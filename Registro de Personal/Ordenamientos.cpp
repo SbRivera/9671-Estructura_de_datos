@@ -1,10 +1,7 @@
 #include <iostream>
+#include <conio.h>
 #define ANSI_COLOR_CYAN     "\x1b[94m"
 #define ANSI_COLOR_RESET    "\x1b[0m"
-
-
-//Ingresar Las Funciones de Ordenamiento (Deber)
-
 
 using namespace std;
 
@@ -57,8 +54,6 @@ void menuOrdenamiento(int opcionActual) {
 operarMenuOrdenamiento() {
     int opcionActual = 1;
 
-    Persona persona1;
-
     while (true) {
         system("cls");
 
@@ -98,8 +93,8 @@ operarMenuOrdenamiento() {
                 		cout << "\t === Ordenamiento _________ ===" << endl;
                 		
                 		break;
-                    case 7:
-                        cout << "Saliendo del programa..." << endl;
+                    case 7:        
+					cout << "\t === Presione Esc para volver ===" << endl;            
                         return 0;
                 }
                 _getch();
@@ -109,6 +104,9 @@ operarMenuOrdenamiento() {
     }
     return 0;
 }
+
+//Ingresar Las Funciones de Ordenamiento (Deber)
+
 
 
 /*void ordenarPorIntercambio(){	

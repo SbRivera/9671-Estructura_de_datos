@@ -24,6 +24,7 @@ void ListaCircularDoble::insertar(Persona dato)
 		this->cabeza->setAnterior(this->cola);
 		this->cola->setSiguiente(this->cabeza);
 		this->cola->setAnterior(this->cabeza);
+		cout << "\n == Registro Exitoso =="<< endl;
 	}
 	else
 	{
@@ -32,6 +33,7 @@ void ListaCircularDoble::insertar(Persona dato)
 		nuevo->setSiguiente(this->cabeza);
 		this->cabeza->setAnterior(nuevo);
 		this->cola = nuevo;
+		cout << "\n == Registro Exitoso =="<< endl;
 	}
 }
 
@@ -99,7 +101,7 @@ void ListaCircularDoble::buscarCedula(string cedula)
 			if (p1.getCedula() == cedula)
 			{
 				Persona p1=aux->getDato();
-				cout<<"Se encontro a la Persona "<<endl;
+				cout<<"\n == Se encontr\242 el registro "<<endl;
 				cout<<"Nombre: "<<p1.getNombre()<<endl;
 				cout<<"Apellido: "<<p1.getApellido()<<endl;
 				cout<<"Cedula: "<<p1.getCedula()<<endl;
@@ -109,7 +111,7 @@ void ListaCircularDoble::buscarCedula(string cedula)
 		} while (aux != this->cabeza);
 		//cout<<"No se encontro a la persona"<<endl;
 	}else{
-		cout<<"No se encontro a la persona"<<endl;
+		cout<<"\n == No se encontr\242 el registro == "<<endl;
 	}
 	
 }
