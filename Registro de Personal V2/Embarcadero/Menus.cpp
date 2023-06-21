@@ -1,7 +1,7 @@
 #include <iostream>
 #include <conio.h>
 #include "Menus.h"
-#include "Ordenamientos.h"
+//#include "Ordenamientos.h"
 #include "Archivos.h"
 
 // Definir códigos de escape ANSI para colores de texto

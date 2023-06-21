@@ -2,7 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include "Validaciones.cpp"
-#include "Ordenamientos.cpp"
+//#include "Ordenamientos.cpp"
 
 // Definir códigos de escape ANSI para colores de texto
 #define ANSI_COLOR_CYAN     "\x1b[94m"
@@ -37,7 +37,7 @@ void Menus::regresarMenu() {
 
 void Menus::mostrarMenu(int opcionActual) {
     cout << "\t\t\t=== MENU ===" << endl;
-    for (int i = 1; i <= 6; i++) {
+    for (int i = 1; i <= 5; i++) {
         if (i == opcionActual) {
             cout << "\t> " << ANSI_COLOR_CYAN;
         }
@@ -60,10 +60,10 @@ void Menus::mostrarMenu(int opcionActual) {
             case 4:
                 cout << "Imprimir Todos los Registros" << ANSI_COLOR_RESET << endl;
                 break;
-			case 5:
-                cout << "Elegir Ordenamientos" << ANSI_COLOR_RESET << endl;
-                break;
-            case 6:
+//			case 5:
+//                cout << "Elegir Ordenamientos" << ANSI_COLOR_RESET << endl;
+//                break;
+            case 5:
                 cout << "Salir" << ANSI_COLOR_RESET << endl;
                 break;
         }
@@ -83,16 +83,16 @@ int Menus::operarMenu() {
 
         switch (tecla) {
             case 72:
-                opcionActual = (opcionActual > 1) ? opcionActual - 1 : 6;
+                opcionActual = (opcionActual > 1) ? opcionActual - 1 : 5;
                 break;
             case 80:
-                opcionActual = (opcionActual < 6) ? opcionActual + 1 : 1;
+                opcionActual = (opcionActual < 5) ? opcionActual + 1 : 1;
                 break;
             case 13:
                 system("cls");
                 switch (opcionActual) {
                     case 1:
-                        cout << "\t === Registrar Nuevo Persona ===" << endl;
+                        cout << "\t === Registrar Nueva Persona ===" << endl;
                         persona1 = ingresoPersona();
                         lista.insertar(persona1);
                         break;
@@ -110,11 +110,11 @@ int Menus::operarMenu() {
                         cout << "\t === Imprimir Todos los Registros ===" << endl;
                         lista.mostrar();
                         break;
+//                    case 5:
+//                		cout << "\t === Elegir Ordenamientos ===" << endl;
+//                		operarMenuOrdenamiento();
+//                		break;
                     case 5:
-                		cout << "\t === Elegir Ordenamientos ===" << endl;
-                		operarMenuOrdenamiento();
-                		break;
-                    case 6:
                         cout << "Saliendo del programa..." << endl;
                         return 0;
                 }
