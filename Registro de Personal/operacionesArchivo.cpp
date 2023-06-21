@@ -160,7 +160,6 @@ bool operacionesArchivo::CargarListaPersonas(){
 	return bandera;
 }
 
-
 bool operacionesArchivo::buscarPersona(Persona emp){
 	Persona empFinded;
 	bool bandera=false;

@@ -4,7 +4,7 @@
 #include "Ordenamientos.h"
 #include "Archivos.h"
 
-// Definir códigos de escape ANSI para colores de texto
+// Definir cÃ³digos de escape ANSI para colores de texto
 #define ANSI_COLOR_CYAN     "\x1b[94m"
 #define ANSI_COLOR_RESET    "\x1b[0m"
 
@@ -25,7 +25,7 @@ void Menus::regresarMenu() {
 
 void Menus::mostrarMenu(int opcionActual) {
     cout << "\t\t\t=== MENU ===" << endl;
-    for (int i = 1; i <= 7; i++) {
+    for (int i = 1; i <= 6; i++) {
         if (i == opcionActual) {
             cout << "\t> " << ANSI_COLOR_CYAN;
         }
@@ -48,10 +48,10 @@ void Menus::mostrarMenu(int opcionActual) {
         case 5:
             cout << "Imprimir Todos los Registros" << ANSI_COLOR_RESET << endl;
             break;
+//        case 6:
+//            cout << "Elegir Ordenamientos" << ANSI_COLOR_RESET << endl;
+//            break;
         case 6:
-            cout << "Elegir Ordenamientos" << ANSI_COLOR_RESET << endl;
-            break;
-        case 7:
             cout << "Salir" << ANSI_COLOR_RESET << endl;
             break;
         }
@@ -72,10 +72,10 @@ int Menus::operarMenu() {
 
         switch (tecla) {
         case 72:
-            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 7;
+            opcionActual = (opcionActual > 1) ? opcionActual - 1 : 6;
             break;
         case 80:
-            opcionActual = (opcionActual < 7) ? opcionActual + 1 : 1;
+            opcionActual = (opcionActual < 6) ? opcionActual + 1 : 1;
             break;
         case 13:
             system("cls");
@@ -102,12 +102,12 @@ int Menus::operarMenu() {
                 cout << "\t === Imprimir Todos los Registros ===" << endl;
                 lista.mostrar();
                 break;
-            case 6:
+/*            case 6:
                 cout << "\t === Elegir Ordenamientos ===" << endl;
                 Ordenamientos orden;
                 orden.operarMenuOrdenamiento();
-                break;
-            case 7:
+                break; */
+            case 6:
                 cout << "Saliendo del programa..." << endl;
                 return 0;
             }
@@ -131,7 +131,7 @@ Persona Menus::ingresoPersona() {
     cout << "\n Ingrese el nombre:" << endl;
     nombre = v2.validarStrings();
 
-    cout << "\n Ingrese el Apellido:" << endl;
+    cout << "\n Ingrese el apellido:" << endl;
     apellido = v2.validarStrings();
 
     persona1.setCedula(cedula);

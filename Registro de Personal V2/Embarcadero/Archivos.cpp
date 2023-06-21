@@ -4,37 +4,38 @@
 #include <iostream>
 #include <fstream>
 
-void Archivos::guardarListaProdctos(ListaCircularDoble lista, const std::string& nombreArchivo) {
-    std::ofstream archivo(nombreArchivo);
+using namespace std;
+void Archivos::guardarListaProdctos(ListaCircularDoble lista, const string& nombreArchivo) {
+    ofstream archivo(nombreArchivo);
 
     if (archivo.is_open()) {
         for (int i = 0; i < lista.dimencion(); i++) {
             archivo << lista.getPosicion(i).getCedula() << ",";
             archivo << lista.getPosicion(i).getNombre() << ",";
-            archivo << lista.getPosicion(i).getApellido() << std::endl;
+            archivo << lista.getPosicion(i).getApellido() << endl;
         }
         archivo.close();
-        std::cout << "Lista de productos guardada exitosamente en " << nombreArchivo << std::endl;
+        cout << "\n Registro exitoso guardado exitosamente " << endl;
     }
     else {
-        std::cerr << "No se pudo abrir el archivo " << nombreArchivo << " para escribir" << std::endl;
+        cerr << "\n No se pudo abrir el archivo " << nombreArchivo << " para escribir" << endl;
     }
 }
 
-ListaCircularDoble Archivos::leerListaTDAProductos(const std::string& nombreArchivo) {
+ListaCircularDoble Archivos::leerListaTDAProductos(const string& nombreArchivo) {
     ListaCircularDoble lista;
-    std::ifstream archivo(nombreArchivo);
+    ifstream archivo(nombreArchivo);
     if (archivo.is_open()) {
-        std::string linea;
-        while (std::getline(archivo, linea)) {
+        string linea;
+        while (getline(archivo, linea)) {
             Persona objeto;
-            std::string cedula, nombre, apellido;
+            string cedula, nombre, apellido;
             size_t coma_pos = linea.find(",");
             size_t coma_pos2 = linea.find(",", coma_pos + 1);
-            if (coma_pos != std::string::npos) {
+            if (coma_pos != string::npos) {
                 cedula = linea.substr(0, coma_pos);
-                nombre = std::stof(linea.substr(coma_pos + 1, coma_pos2 - coma_pos - 1));
-                apellido = std::stoi(linea.substr(coma_pos2 + 1));
+                nombre = stof(linea.substr(coma_pos + 1, coma_pos2 - coma_pos - 1));
+                apellido = stoi(linea.substr(coma_pos2 + 1));
                 Persona persona;
                 persona.setCedula(cedula);
                 persona.setNombre(nombre);
@@ -43,10 +44,10 @@ ListaCircularDoble Archivos::leerListaTDAProductos(const std::string& nombreArch
             }
         }
         archivo.close();
-        std::cout << "Lista de productos leída exitosamente desde " << nombreArchivo << std::endl;
+        cout << "\n Registros leidos exitosamente desde " << endl;
     }
     else {
-        std::cerr << "No se pudo abrir el archivo " << nombreArchivo << " para leer" << std::endl;
+        cerr << "\n No se pudo abrir el archivo " << nombreArchivo << " para leer" << endl;
     }
     return lista;
 }
